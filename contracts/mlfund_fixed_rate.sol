@@ -315,14 +315,14 @@ contract MLFund is Ownable, Pausable {
      * @notice  the purpose of this operation is to burn the tokens or other things
      *          surely the admin may also never call this function..
      */
-    function withdrawBaseToken(uint256 amount) public onlyOwner {
-        require(amount > 0, "withdrawBaseToken: amount should be greater than 0");
+    // function withdrawBaseToken(uint256 amount) public onlyOwner {
+    //     require(amount > 0, "withdrawBaseToken: amount should be greater than 0");
 
-        require(baseToken.balanceOf(address(this)) >= amount, 
-                "withdrawBaseToken: contract has no enough quote balance");
+    //     require(baseToken.balanceOf(address(this)) >= amount, 
+    //             "withdrawBaseToken: contract has no enough quote balance");
 
-        _withdrawBaseToken(_msgSender(), amount);
-    }
+    //     _withdrawBaseToken(_msgSender(), amount);
+    // }
 
     /**
      * @dev pause mlfund function
@@ -439,12 +439,12 @@ contract MLFund is Ownable, Pausable {
     }
 
     // transfer base token money by admin
-    function _withdrawBaseToken(address to, uint256 amount) private
-    {
-        baseToken.transfer(to, amount);
+    // function _withdrawBaseToken(address to, uint256 amount) private
+    // {
+    //     baseToken.transfer(to, amount);
 
-        // emit event if needed
-    }
+    //     // emit event if needed
+    // }
 
 
     /*************  event definition  *************/
